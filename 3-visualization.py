@@ -9,11 +9,9 @@ import plotly.express as px
 import io
 import base64
 import os
-current_directory = os.getcwd()
 
 # Sample data
-df = pd.read_csv(current_directory +
-                 '/code/pyspark-data/datasets/course-reviews-dataset/course_reviews_with_score.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/danrfiuza/sentiment-analysis-dashboard/main/course_reviews_with_score.csv')
 
 df['classification'] = df['roberta_classification'].apply(
     lambda x: 'Positive' if x == 1 else 'Negative' if x == -1 else 'Neutral')
